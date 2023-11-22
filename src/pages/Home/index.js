@@ -113,16 +113,18 @@ const Page = () => {
         </Modal>
       </div>
     </main>
-    <footer className="row">
-      <div className="col presta">
-        <h3>Notre derniére prestation</h3>
-        <EventCard
-          imageSrc={last?.cover}
-          title={last?.title}
-          date={new Date(last?.date)}
-          small
-          label="boom"
-        />
+    <footer className="row" data-testid="footer-test">
+        <div className="col presta" data-testid="last-event-card-test">
+          <h3>Notre derniére prestation</h3>
+          {last && (
+            <EventCard
+              imageSrc={last.cover}
+              title={last.title}
+              date={new Date(last.date)}
+              small
+              label={last.type}
+            />
+          )}
       </div>
       <div className="col contact">
         <h3>Contactez-nous</h3>
