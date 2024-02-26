@@ -80,7 +80,7 @@ describe("When a select is created", () => {
             bubbles: true,
             cancelable: true,
           })
-        );
+        );        
         expect(onChange.mock.calls.length).toBeGreaterThan(1);
       });
     });
